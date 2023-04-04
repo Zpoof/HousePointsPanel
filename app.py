@@ -80,4 +80,28 @@ if __name__ == '__main__':
             </style>
             """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+    st.markdown(
+        body="""
+        <style>
+            h1 > div > a {
+                display: none;
+            }
+            h2 > div > a {
+                display: none;
+            }
+            h3 > div > a {
+                display: none;
+            }
+            h4 > div > a {
+                display: none;
+            }
+            h5 > div > a {
+                display: none;
+            }
+            h6 > div > a {
+                display: none;
+            }
+        </style>
+        """,
+         unsafe_allow_html=True)
     app()
