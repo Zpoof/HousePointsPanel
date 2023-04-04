@@ -21,7 +21,14 @@ def get_data(url):
     else:
         st.write("Error retrieving data.")
         return None
-
+def hide_anchor_link():
+    st.markdown("""
+        <style>
+        .css-15zrgzn {display: none}
+        .css-eczf16 {display: none}
+        .css-jn99sy {display: none}
+        </style>
+        """, unsafe_allow_html=True)
 # Define app layout
 def app():
     # Define login page
@@ -73,6 +80,7 @@ def app():
 
 if __name__ == '__main__':
     st.set_page_config(page_title="House Points Aravali", page_icon = "Shri.png")
+    hide_anchor_link()
     hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -80,28 +88,4 @@ if __name__ == '__main__':
             </style>
             """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-    st.markdown(
-        body="""
-        <style>
-            h1 > div > a {
-                display: none;
-            }
-            h2 > div > a {
-                display: none;
-            }
-            h3 > div > a {
-                display: none;
-            }
-            h4 > div > a {
-                display: none;
-            }
-            h5 > div > a {
-                display: none;
-            }
-            h6 > div > a {
-                display: none;
-            }
-        </style>
-        """,
-         unsafe_allow_html=True)
     app()
